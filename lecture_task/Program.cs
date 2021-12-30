@@ -1,9 +1,11 @@
-﻿//==== Работа с текстом
+﻿
+// Из лекции 2нояб "Функции продолжение" курса "Знакомство с ЯП"
+//
+/* //==== Работа с текстом
 // Дан текст. В тексте нужно все пробелы заменить черточками,
 // маленькие буквы "к" заменить большими "К",
 // а большие "С" заменить маленькими "с".
 // Ясна ли задача?
-
 string text = "- Я думаю, - сказал князь, улыбаясь, - что, "
             + "ежели бы вас послали вместо нашего милого Винценгероде,"
             + "вы бы взяли приступом согласие прусского короля. "
@@ -12,7 +14,6 @@ string text = "- Я думаю, - сказал князь, улыбаясь, - �
 // string s = "qwerty"
 //             012345
 // s[3] // это "r"
-
 string Replace(string text, char oldValue, char newValue)
 {
     string result = string.Empty;
@@ -20,45 +21,71 @@ string Replace(string text, char oldValue, char newValue)
     int length = text.Length;
     for (int i = 0; i < length; i++)
     {
-        if (text[i] == oldValue) result + $"{newValue}";
-        else result + $"";
+        if (text[i] == oldValue) result = result + $"{newValue}";
+        else result = result + text[i];
     }
-
     return result;
 }
+string newText = Replace(text, ' ', '|');
+Console.WriteLine(newText);
+Console.WriteLine();
+newText = Replace(newText, 'к', 'К');
+Console.WriteLine(newText);
+Console.WriteLine();
+newText = Replace(newText, 'С', 'с');
+Console.WriteLine(newText); */
 
 
 
 
 
-
-
-
-
-
-
-
-
-/* // показать последнюю цифру 3 х значного числа
-
-//(123/10)%10 = 12.3
-//12%10 = 2
-//123%10 = 3
-
-string MyMethod(int a)
+// сортировка массива методом выбора
+/* int[] arr = { 1, 5, 4, 3, 2, 6, 7, 1, 1 };
+void PrintArray(int[] array)
 {
-    int b = 0;
-    if (a<100 || a>999)
+    int count = array.Length;
+    for (int i = 0; i < count; i++)
     {
-        return "число не трехзначное";
+        Console.Write($"{array[i]} ");
     }
-    else
+    Console.WriteLine();
+}
+void SelectionSort(int[] array)
+{
+    for (int i = 0; i < array.Length - 1; i++)
     {
-        b = (a/10)%10;
-        return $"{b}";
+        int minPosition = i;
+        for (int j = i + 1; j < array.Length; j++)
+        {
+            if (array[j] < array[minPosition]) minPosition = j;
+        }
+        int temporary = array[i];
+        array[i] = array[minPosition];
+        array[minPosition] = temporary;
     }
 }
-
-int a = 999;
-string res = MyMethod(a);
-Console.WriteLine(res); */
+PrintArray(arr);
+SelectionSort(arr);
+PrintArray(arr); */
+//
+// д/з: адаптировать код сортировки массива так, чтоб вначале были большие
+/* void FillSourceArray(int[] array, int minValue, int maxValue) {
+    for (int index = 0; index < array.Length; index++)
+        array[index] = new Random().Next(minValue, maxValue); }
+void PrintArray(int[] array) {
+    for (int i = 0; i < array.Length; i++) Console.Write($"{array[i]} ");
+    Console.WriteLine(); }
+void SelectionSort(int[] array) {
+    for (int i = 0; i < array.Length - 1; i++) {
+        int maxPosition = i;
+        for (int j = i + 1; j < array.Length; j++)
+            if (array[j] > array[maxPosition]) maxPosition = j;
+        int temporary = array[i];
+        array[i] = array[maxPosition];
+        array[maxPosition] = temporary; } }
+// Основной кодоблок
+int[] arr = new int[10];
+FillSourceArray(arr, 1, 10);
+PrintArray(arr);
+SelectionSort(arr);
+PrintArray(arr); */

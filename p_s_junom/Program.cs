@@ -1,26 +1,4 @@
-﻿/* // Задача 12. Удалить вторую цифру трёхзначного числа
-//
-int RemSecDig(int arg)
-{
-    int digit3 = arg % 10;
-    int digit1 = arg / 100;
-    return digit1 * 10 + digit3;
-}
-// основной кодоблок задачи
-int Number = new Random().Next(100, 1000);
-int NewNumber = RemSecDig(Number);
-Console.WriteLine($"Исходное число {Number}, преобразованное: {NewNumber}"); */
-
-
-
-
-
-
-
-
-
-
-/* // Раздел: Почувствуй себя джуном*
+﻿/* // Раздел: Почувствуй себя джуном*
 // 15. Дано число. Проверить кратно ли оно 7 и 23
 //
 string CheckMultiples15(int num, int div)
